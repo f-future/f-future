@@ -134,7 +134,7 @@ $(function () {
 	];
 
 	comments.forEach(function (item) {
-		console.log('%c' + item, 'color: #399c9c');
+		console.log('%c' + item, 'color: #215330');
 	});
 
 	$('.btn-reward').on('click', function (e) {
