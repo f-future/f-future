@@ -1,5 +1,7 @@
 # F-Future Blog [![Build Status](https://travis-ci.com/f-future/f-future.svg?branch=master)](https://travis-ci.com/f-future/f-future) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
+Github Page: https://f-future.github.io/f-future/
+
 ## Guidance
 
 ### How to add posts
@@ -29,12 +31,12 @@
 
 #### Without Nodejs installed
 
-1. Manually create a `<newtitle>.md` file under `source/_posts` folder.
+1. Manually create a `<title>.md` file under `source/_posts` folder.
 2. Make sure to add a header section like below (only `title` is mandatory):
 
    ```markdown
    ---
-   title: test
+   title: <title>
    date: 2020-08-01 16:54:00
    tags:
    ---
