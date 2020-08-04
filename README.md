@@ -1,4 +1,4 @@
-# F-Future Blog [![Build Status](https://travis-ci.com/peacemakercq/f-future.svg?branch=master)](https://travis-ci.com/peacemakercq/f-future) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+# F-Future Blog [![Build Status](https://travis-ci.com/f-future/f-future.svg?branch=master)](https://travis-ci.com/f-future/f-future) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
 ## Guidance
 
