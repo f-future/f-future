@@ -17,8 +17,8 @@ mixin post(post, index)
         include gallery.pug
         +gallery(post)
 
-        time.post__time(datetime = date_xml(post.date))
-          = date(post.date, theme.date_format)
+        //- time.post__time(datetime = date_xml(post.date))
+        //-   = date(post.date, theme.date_format)
 
         h1.post__title: a(href = url_for(post.path))
           = post.title
