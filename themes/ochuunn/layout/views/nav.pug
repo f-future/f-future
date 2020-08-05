@@ -6,7 +6,10 @@
 
 - function getNextPost() {
     - if (site.shuffled != null && site.shuffled.length != 0) {
-      - return site.shuffled.pop()
+      - if (is_post())
+        - return site.shuffled.pop()
+      - else
+        - return site.shuffled[0]
     - }
     - site.shuffled = getShuffled()
     - return getNextPost()
