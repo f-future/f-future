@@ -17,7 +17,7 @@
     - let result = site.posts.toArray().slice()
     - for (let i = 0; i < result.length; ++i) {
       - let tmp = result[i]
-      - let swap_index = date % (result.length - i)
+      - let swap_index = i + date % (result.length - i)
       - result[i] = result[swap_index]
       - result[swap_index] = tmp
     - }
