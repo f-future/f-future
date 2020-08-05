@@ -15,7 +15,6 @@
 - function getShuffled() {
     - let date = (new Date()).getDate()
     - let result = site.posts.toArray().slice()
-    - return result
     - let swap_index = -1
     - for (let i = 0; i < result.length; ++i) {
       - swap_index = (swap_index + date - i) % (result.length -i ) + i
