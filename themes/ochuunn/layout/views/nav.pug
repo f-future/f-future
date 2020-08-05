@@ -4,40 +4,35 @@
 //-       li.head-nav__item: a.head-nav__link(href = url_for(val))
 //-         = index
 
+// Everyday, we sort the posts by the hash code of 'path + date', and play the post in such order.
 - function getNextPost() {
-  - let posts = site.posts.sort('path').toArray()
-  - let index = posts.findIndex(post => path.startsWith(post.path))
+  - let date = (new Date()).getDate()
+  - let posts = site.posts.toArray()
+  - posts.sort(function(post1, post2) { return getHashCode(post1.path, date) - getHashCode(post2.path, date) })
+  - if (is_home()) logBuildInfo(posts)
+  - let index = posts.findIndex(post => getHashCode(post.path, date) == getHashCode(path.slice(0,-10)/*trim trailing 'index.html'*/, date))
   - if (index != -1)
     - return posts[(index + 1) % posts.length]
   - else
     - return posts[0]
 - }
 
-//- - function getNextPost() {
-//-     - if (site.shuffled != null && site.shuffled.length != 0) {
-//-       - if (is_post())
-//-         - return site.shuffled.pop()
-//-       - else
-//-         - return site.shuffled[0]
-//-     - }
-//-     - site.shuffled = getShuffled()
-//-     - return getNextPost()
-//- - }
+- function getHashCode(str, salt) {
+  - let salted = str + salt.toString()
+  - let hash = 0, i, chr;
+  - for (i = 0; i < salted.length; i++) {
+    - chr = salted.charCodeAt(i);
+    - hash = ((hash << 7) - hash) + chr;
+    - hash |= 0;
+  - }
+  - return hash;
+- }
 
-//- - function getShuffled() {
-//-     - let date = (new Date()).getDate()
-//-     - let result = site.posts.toArray().slice()
-//-     - let swap_index = -1
-//-     - for (let i = 0; i < result.length; ++i) {
-//-       - swap_index = (swap_index + date - i) % (result.length -i ) + i
-//-       - let tmp = result[swap_index]
-//-       - for (let j = swap_index; j > i; --j) {
-//-         - result[j] = result[j-1]
-//-       - }
-//-       - result[i] = tmp
-//-     - }
-//-     - return result
-//- - }
+- function logBuildInfo(posts) {
+  - console.log('*'.repeat(80))
+  - posts.forEach(post => console.log(post.path))
+  - console.log('*'.repeat(80))
+- }
 
 nav.head-nav.u-fr
   ul.head-nav__list
